@@ -27,6 +27,7 @@ requirements:
     - python-dotenv ~=0.20.0
     - requests ~=2.28.1
     - rich ~=12.5.1
+    - shodan ~=1.28.0
 
 test:
   imports:
@@ -40,7 +41,7 @@ test:
     - pip
 
 about:
-  home: https://pypi.org/project/wtfis/
+  home: https://github.com/pirxthepilot/wtfis
   summary: Passive host and domain name lookup tool for non-robots
   license: MIT
   license_file:
