@@ -1,7 +1,7 @@
 About wtfis
 ===========
 
-Home: https://pypi.org/project/wtfis/
+Home: https://github.com/pirxthepilot/wtfis
 
 Package license: MIT
 
