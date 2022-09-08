@@ -30,15 +30,19 @@ requirements:
     - shodan ~=1.28.0
 
 test:
+  source_files:
+    - tests
   imports:
     - wtfis
   commands:
     - pip check
-    - export VT_API_KEY=foo  # [not win]
-    - set VT_API_KEY=foo  # [win]
+    - export VT_API_KEY=foo
     - wtfis --help
+    - pytest -vvv --capture=tee-sys tests
   requires:
+    - freezegun
     - pip
+    - pytest
 
 about:
   home: https://github.com/pirxthepilot/wtfis
