@@ -1,5 +1,5 @@
 {% set name = "wtfis" %}
-{% set version = "0.2.2" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wtfis-{{ version }}.tar.gz
-  sha256: 05b0de504be78b9c637ffa31349a9ceeba130f1594cbf6c423c487d30253f687
+  sha256: 607b3dcd30b96b20bae4e84ee1050560e55d318b569b2179de5fbcfc35dd8e5d
 
 build:
   noarch: python
@@ -22,11 +22,11 @@ requirements:
     - pip
     - python >=3.8
   run:
-    - pydantic ~=1.9.1
+    - pydantic ~=1.10.2
     - python >=3.8
-    - python-dotenv ~=0.20.0
+    - python-dotenv ~=0.21.0
     - requests ~=2.28.1
-    - rich ~=12.5.1
+    - rich ~=12.6.0
     - shodan ~=1.28.0
 
 test:
