@@ -25,7 +25,7 @@ requirements:
     - pydantic ~=2.0.3
     - python >=3.8
     - python-dotenv ~=1.0.0
-    - requests ~=2.31.1
+    - requests ~=2.31.0
     - rich ~=13.4.2
     - shodan ~=1.29.1
 
