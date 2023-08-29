@@ -1,5 +1,5 @@
 {% set name = "wtfis" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wtfis-{{ version }}.tar.gz
-  sha256: e5922c6550488e90e8a6e19805f0432a607155f27edcb75f1a43e5152e72a197
+  sha256: 812cc1679f5bc4b07f73d84d96a963b16cbed2e4ccc07c7f24b2b696abba3dd3
 
 build:
   noarch: python
