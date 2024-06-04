@@ -22,10 +22,10 @@ requirements:
     - pip
     - python >=3.8
   run:
-    - pydantic ~=2.7.0
+    - pydantic ~=2.7.2
     - python >=3.8
     - python-dotenv ~=1.0.1
-    - requests ~=2.31.0
+    - requests ~=2.32.3
     - rich ~=13.7.1
     - shodan ~=1.31.0
 
