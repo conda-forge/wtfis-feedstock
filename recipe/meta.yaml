@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wtfis-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wtfis-{{ version }}.tar.gz
   sha256: c3c0d3ef1fef20222bc3cb96f2b69a00e9714e468277fd87cf20c051de253331
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   entry_points:
     - wtfis = wtfis.main:main
 
@@ -20,10 +20,10 @@ requirements:
   host:
     - hatchling
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - pydantic ~=2.9.2
-    - python >=3.8
+    - python >={{ python_min }}
     - python-dotenv ~=1.0.1
     - requests ~=2.32.3
     - rich ~=13.7.1
@@ -43,6 +43,7 @@ test:
     - freezegun
     - pip
     - pytest
+    - python {{ python_min }}
 
 about:
   home: https://github.com/pirxthepilot/wtfis
