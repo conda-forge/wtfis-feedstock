@@ -22,12 +22,14 @@ requirements:
     - pip
     - python {{ python_min }}
   run:
-    - pydantic ~=2.9.2
+    - pydantic~=2.10.6; python_version == '3.8'
+    - pydantic~=2.11.3; python_version >= '3.9'
     - python >={{ python_min }}
-    - python-dotenv ~=1.0.1
-    - requests ~=2.32.3
-    - rich ~=13.7.1
-    - shodan ~=1.31.0
+    - python-dotenv~=1.0.1; python_version == '3.8'
+    - python-dotenv>=1.1.0,<2; python_version >= '3.9'
+    - requests>=2.32.3,<3
+    - rich>=14.0.0,<15
+    - shodan>=1.31.0,<2
 
 test:
   source_files:
