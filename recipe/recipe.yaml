@@ -41,7 +41,7 @@ tests:
       python_version: ${{ python_min }}.*
   - files:
       source:
-        - tests
+        - tests/
     requirements:
       run:
         - freezegun
