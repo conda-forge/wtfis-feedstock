@@ -1,0 +1,65 @@
+schema_version: 1
+
+context:
+  name: wtfis
+  version: 0.10.2
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/wtfis-${{ version }}.tar.gz
+  sha256: e3df5b8151b87e23e3f803be22739d6b7204e2c1f9460f773b85e38b81250efc
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - wtfis = wtfis.main:main
+
+requirements:
+  host:
+    - hatchling
+    - pip
+    - python ${{ python_min }}.*
+  run:
+    - pydantic ~=2.11.3
+    - python >=${{ python_min }}
+    - python-dotenv >=1.1.0,<2
+    - requests >=2.32.3,<3
+    - rich >=14.0.0,<15
+    - shodan >=1.31.0,<2
+
+tests:
+  - python:
+      imports:
+        - wtfis
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - files:
+      source:
+        - tests
+    requirements:
+      run:
+        - freezegun
+        - pytest
+        - python ${{ python_min }}.*
+    script:
+      - export VT_API_KEY=foo
+      - wtfis --help
+      - pytest -vvv --capture=tee-sys tests
+
+about:
+  summary: Passive host and domain name lookup tool for non-robots
+  license: MIT
+  license_file:
+    - LICENSE
+  homepage: https://github.com/pirxthepilot/wtfis
+
+extra:
+  recipe-maintainers:
+    - pirxthepilot
+    - thewchan
