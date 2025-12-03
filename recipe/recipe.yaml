@@ -26,7 +26,7 @@ requirements:
     - pip
     - python ${{ python_min }}.*
   run:
-    - pydantic ~=2.11.3
+    - pydantic ~=2.12.5
     - python >=${{ python_min }}
     - python-dotenv >=1.1.0,<2
     - requests >=2.32.3,<3
