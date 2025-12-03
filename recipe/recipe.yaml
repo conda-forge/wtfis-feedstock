@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: wtfis
-  version: "0.13.0"
+  version: "0.14.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/wtfis-${{ version }}.tar.gz
-  sha256: 44169d937373e8f34d919c86c3ad71c1fc08b5e06a02a853f6fe5990aba99cff
+  sha256: 71ce501972dace781316f2b1cedcc3a5783a46a4f9b87acba355eb33d86528b6
 
 build:
   number: 0
